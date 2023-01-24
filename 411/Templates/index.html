@@ -1,0 +1,273 @@
+<!DOCTYPE.html>
+<html>
+
+<title> Scrapper </title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./current.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:900|Arvo:700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background: rgba(163, 220, 244, 0.29);
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: .8rem 1rem;
+    display: block;
+    line-height: 1;
+}
+
+nav ul li {
+    border-bottom: 1px dotted black;
+    font-size: 20px;
+    font-family: 'Alegreya', serif;
+
+}
+
+h1 {
+    line-height: 0;
+    padding: .8rem 0rem;
+    text-align: center;
+}
+
+nav div:first-child h1,
+nav ul {
+    margin: 0;
+}
+
+/* this takes off the white space between the icon and the navigation*/
+
+/* styling for larger devices*/
+
+@media only screen and (min-width:30em) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background: rgba(163, 220, 244, 0.29);
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        background: none;
+        flex-wrap: wrap;
+        margin-right: 40px;
+    }
+
+    nav div:first-child h1 {
+        padding: 0;
+        margin: 0 1rem;
+    }
+
+    nav div:first-child img {
+        height: 90px;
+    }
+
+    nav ul li {
+        border-bottom: none;
+        flex: 1 0 auto;
+    }
+
+    nav ul li a {
+        padding: 1.2rem 1rem;
+    }
+
+    nav ul li a:hover {
+        background: rgba(252, 221, 50, 0.83);
+    }
+}
+
+nav ul li a:hover {
+    background: rgba(252, 221, 50, 0.83);
+}
+
+
+#banner {
+    background-image: url("https://d13yacurqjgara.cloudfront.net/users/28455/screenshots/1389791/weather.gif");
+    height: 280px;
+    padding-top: 30px;
+    /*this is the main component of the parallax  which ive removed check cv project*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1600px 650px;
+    /* to get the gif to fit*/
+}
+
+#banner .header {
+    /*this still isnt responsive. It breaks when you go to cell phone size*/
+    position: absolute;
+    text-align: center;
+    top: 300px;
+    width: 100%;
+    margin: 0 auto;
+    color: lightyellow;
+    font-family: 'Alegreya', serif;
+}
+
+.today {
+    padding: 30px;
+    color: white;
+    background-color: rgba(0, 17, 57, 0.8);
+    text-align: center;
+    font-family: "Verdana", serif;
+}
+
+.search-text {
+    padding: 30px;
+    background-color: white;
+    color: blue;
+    text-align: center;
+    font-family: "Verdana", serif;
+}
+
+.searchbar {
+    display: block;
+    text-align: center;
+}
+
+/*this is how you center an element. Wrap it in a div in HTML and set display level block and text align centre    */
+
+.search-bar {
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    width: 250px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.search-btn {
+    border: 1px solid black;
+    font-size: 16px;
+    padding: 10px;
+    background: skyblue;
+    cursor: pointer;
+    outline: none;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+}
+
+.search-btn:active {
+    top: 2px;
+}
+
+.response-field {
+    background-color: rgba(163, 220, 244, 0.29);
+    max-width: 600px;
+    max-height: 1000px;
+    min-width: 191px;
+    min-height: 120px;
+    border: solid 2px blue;
+    margin: auto;
+    margin-top: 25px;
+    font-family: "Verdana", serif;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    color: black;
+    overflow-wrap: break-word;
+    height: 50%;
+
+}
+
+.responseHeader {
+    color: blue;
+    text-align: center;
+}
+
+.response {
+    display: inline;
+    padding-left: 2%;
+
+}
+
+/*to change the color of humidity*/
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+    background-color: black;
+}
+
+.copyright {
+    padding: 15px;
+    background-color: rgba(0, 17, 57, 0.8);
+    text-align: center;
+    font-family: "Verdana", serif;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+/*.copyright {
+    padding: 15px;
+    background-color: rgba(0, 17, 57, 0.8);
+    text-align: center;
+    font-family: "Verdana", serif;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+}*/
+</style>
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js "></script>
+    <script src="jscurrent.js">
+    </script>
+
+    
+
+    <div class="today">
+        <h2>What Phone Number Do You Need Info On?</h2>
+    </div>
+
+    <div class="search-text">
+        <h3> Enter phone number below</h3>
+    </div>
+    <!--got the below code by following this tutorial https://www.youtube.com/watch?v=38rJPEqapoA -->
+
+    <div class="searchbar">
+        <form action="/submit" method="post">
+            <input type="text" class="search-bar" id="input" placeholder="(555) 555-555" , name ="search_bar" maxlength="12" autocomplete="off" onMouseDown="" onBlur="" />
+            <!--moved this together to get a seamless search bar with button--><input class="search-btn" id="searchBtn" value="Search"  type="submit" />
+            <!--onClick added in by gaurav-->
+            <!--type="submit" was removed from input because it was reloading the page replaced with type='button'-->
+        </form>
+        </div>
+
+
+</body>
+
+</html>
